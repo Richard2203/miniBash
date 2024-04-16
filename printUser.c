@@ -1,9 +1,7 @@
-#include<stdio.h>
+#include <stdio.h>
 #include <unistd.h>
-#include <limits.h>
-#include <stdlib.h>
 
 int main() {
-    printf("HolaMundo\n");
-    exit(20);
+    printf("Usuario que ejecutó el proceso: %s\n", getlogin());
+    return 0;
 }
