@@ -37,20 +37,18 @@ void bash(){
     do{
         // Prompt
         printf("%s ", prompt);
-        // Leer la entrada del usuario
+        
+        
         fgets(input, sizeof(input), stdin);
-        // Dividir la entrada en palabras
+
+        // Dividimos la entrada en palabras
         sscanf(input, "%s %s", archivo, num_str);
-        // Salir si el usuario ingresa "exit"
+
         if(!strcmp(archivo,"exit")) exit(EXIT_SUCCESS); // Mover la salida del bucle aquí
         
-        // Convertir el número adicional a entero si se proporciona
         if (num_str[0] != '\0') {
             num = atoi(num_str);
-        } else {
-            // Si no se proporciona el segundo argumento, establecer num en 0 o cualquier otro valor predeterminado
-            num = 0; // Cambiar este valor según sea necesario
-        }
+        } else num = 0;
 
         // Path completo del archivo
         char path[1050];
@@ -61,7 +59,7 @@ void bash(){
         if(pid==-1){
             perror("Error al crear el proceso hijo.");
         } else if(pid==0) {
-            // Si se proporciona el segundo argumento, pasarlo como argumento adicional
+            // Si existe segundo argumento se envia 
             if (num_str[0] != '\0') {
                 estado = execl(path, archivo, num_str, NULL);
             } else {
@@ -75,7 +73,6 @@ void bash(){
             }
         } else {
             pid = wait(&estado);
-            // exit(255); // Eliminar esta línea
         }
     }while(1);
 }
