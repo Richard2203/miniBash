@@ -3,5 +3,5 @@
 
 int main() {
     printf("ID del proceso actual: %d\n", getpid());
-    return 0;
+    _exit(20);
 }

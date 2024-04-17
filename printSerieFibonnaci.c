@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 int fibonacci(int n) {
     if (n <= 1)
@@ -17,5 +19,6 @@ int main(int argc, char *argv[]) {
         return 1;
     }
     printf("El elemento %d de la serie Fibonacci es: %d\n", n, fibonacci(n));
-    return 0;
+    _exit(20);
 }
+

@@ -3,5 +3,5 @@
 
 int main() {
     printf("ID de la sesión: %d\n", getsid(0));
-    return 0;
+    _exit(20);
 }

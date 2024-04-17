@@ -3,5 +3,5 @@
 
 int main() {
     printf("ID del grupo del proceso: %d\n", getgid());
-    return 0;
+    _exit(20);
 }

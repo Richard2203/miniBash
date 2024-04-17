@@ -3,5 +3,5 @@
 
 int main() {
     printf("Usuario que ejecutó el proceso: %s\n", getlogin());
-    return 0;
+    _exit(20);
 }

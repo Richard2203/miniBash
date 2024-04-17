@@ -3,5 +3,5 @@
 
 int main() {
     printf("ID del proceso padre: %d\n", getppid());
-    return 0;
+    _exit(20);
 }

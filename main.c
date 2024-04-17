@@ -31,13 +31,19 @@ void getPrompt(char *prompt) {
 }
 
 void bash(){
-    char prompt[1000], archivo[50];
+    char prompt[1000], archivo[50], num_str[10];
+    int num;
     getPrompt(prompt); 
     do{
-        // Promt
+        // Prompt
         printf("%s", prompt);
-        scanf("%s", archivo);
-        if(!strcmp(archivo,"exit")) exit(EXIT_SUCCESS);
+        // Leer el nombre del archivo y el número adicional
+        scanf("%s %s", archivo, num_str);
+        // Salir si el usuario ingresa "exit"
+        if(!strcmp(archivo,"exit")) exit(EXIT_SUCCESS); // Mover la salida del bucle aquí
+        
+        // Convertir el número adicional a entero
+        num = atoi(num_str);
 
         // Path completo del archivo
         char path[1050];
@@ -66,9 +72,11 @@ void bash(){
             }
         } else {
             pid = wait(&estado);
+            // exit(255); // Eliminar esta línea
         }
     }while(1);
 }
+
 
 int main() {
     system("clear");
