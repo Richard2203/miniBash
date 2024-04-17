@@ -36,7 +36,7 @@ void bash(){
     getPrompt(prompt); 
     do{
         // Prompt
-        printf("%s", prompt);
+        printf("%s ", prompt);
         // Leer el nombre del archivo y el número adicional
         scanf("%s %s", archivo, num_str);
         // Salir si el usuario ingresa "exit"
@@ -55,13 +55,7 @@ void bash(){
             perror("Error al crear el proceso hijo.");
         } else if(pid==0) {
             estado = execl(path, archivo, 
-                "argumento1", 
-                "argumento2", 
-                "4", 
-                "5", 
-                "5", 
-                "bool", 
-                "3.1415", 
+                num_str, 
                 NULL
             );
 

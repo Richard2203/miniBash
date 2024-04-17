@@ -15,7 +15,7 @@ int main(int argc, char *argv[]) {
     }
     int n = atoi(argv[1]);
     if (n < 0) {
-        fprintf(stderr, "Numero invàlido.\n");
+        fprintf(stderr, "Numero invalido.\n");
         return 1;
     }
     printf("El elemento %d de la serie Fibonacci es: %d\n", n, fibonacci(n));
